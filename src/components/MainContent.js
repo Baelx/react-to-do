@@ -1,13 +1,16 @@
 import React from 'react';
+import ToDoItem from './ToDoItem.js';
+
 
 const MainContent = () => (
-    <main>This is the main content
-      <div>
-        <input type="checkbox" /><p>Do the dishes</p>
-        <input type="checkbox" /><p>Do the dew</p>
-        <input type="checkbox" /><p>Do the hustle</p>
-      </div>
-</main>
-  )
+  <main className="to-do-list">
+
+    <ToDoItem name="Do the dishes"/>
+    <ToDoItem name="Do groceries"/>
+    <ToDoItem name="Do the hustle"/>
+
+  </main>
+
+)
 
 export default MainContent;
