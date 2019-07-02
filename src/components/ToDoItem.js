@@ -1,8 +1,12 @@
 import React from 'react';
+import '../App.css'
+
 
 const ToDoItem = (props) => (
-  <div>
-    <input type="checkbox" /><p>{props.name}</p>
+  <div className="to-do-item">
+    <input type="checkbox" />
+    <p>{props.info.task}</p>
+    <p>Owner: {props.info.owner}</p>
   </div>
 )
 
