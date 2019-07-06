@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ToDoItem from './ToDoItem.js';
+import toDoArray from '../data/toDoData';
 
 const style = {
   center: {
@@ -11,23 +12,42 @@ const style = {
 }
 
 
-const MainContent = () => (
+
+class MainContent extends Component {
+ 
+constructor() {
+  super();
+  this.state = [
+    {
+        id: 54,
+        title: "Do the dishes",
+        complete: false
+    },
+    {
+        id: 83,
+        title: "Do the laundry",
+        complete: false
+    },
+    {
+        id: 82,
+        title: "Do the hustle",
+        complete: true
+    }
+]
+}
+
+
+render () {
+  const toDoItems = this.state.map(task => <ToDoItem key={task.id} title={task.title} complete={task.complete}/>)
+
+
+  return (
+
   <main style={style.center}>
-    <ToDoItem info={{
-      task: "Do the dishes",
-      owner: "Alex"
-    }}/>
-        <ToDoItem info={{
-      task: "Do the laundry",
-      owner: "Alex"
-    }}/>
-        <ToDoItem info={{
-      task: "Do the hustle",
-      owner: "Alex"
-    }}/>
-
+  {toDoItems}
   </main>
-
 )
+}
 
+}
 export default MainContent;
